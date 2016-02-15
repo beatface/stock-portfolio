@@ -1,0 +1,5 @@
+{
+ "events": {
+   "crash": "osascript -e 'display notification \"App crashed due to:\n'$FILENAME'\" with title \"Node Webserver\"'"
+ }
+}
