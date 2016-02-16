@@ -1,4 +1,3 @@
-/*eslint-disable no-alert, no-console */
 "use strict";
 
 // const GetQuotes = require('../models/get_quotes');

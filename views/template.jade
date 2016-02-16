@@ -3,12 +3,23 @@ html
 	head
 		block title
 			title= title
-			link(rel='stylesheet' href='/lib/Materialize/dist/css/materialize.min.css')
+			link(rel='stylesheet' href='lib/Materialize/dist/css/materialize.min.css')
 		//- link(rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css')
 		//- link(rel='stylesheet' href='/lib/font-awesome/css/font-awesome.css')
 		//- link(href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css')
 		//- link(rel='stylesheet' href='/stylesheets/style.css')
 	body
+		block header 
+			nav.teal.lighten-2
+				.nav-wrapper
+					a(href="#" class="brand-logo") Logo
+					ul#nav-mobile.right.hide-on-med-and-down
+						li 
+							a(href="sass.html") Portfolio
+						li 
+							a(href="badges.html") View Quotes
+						li 
+							a(href="collapsible.html") Buy/Sell
 		block content
 
 

@@ -16,7 +16,10 @@
       "browser": true,
       "mongo": true
     },
-    "extends": "eslint:recommended"
+    "extends": "eslint:recommended",
+    "rules": {
+      "no-console": 0
+    }
   },
   "repository": {
     "type": "git",
@@ -32,7 +35,8 @@
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "jade": "^1.11.0",
-    "mongoose": "^4.4.3"
+    "mongoose": "^4.4.3",
+    "node-sass-middleware": "^0.9.7"
   },
   "devDependencies": {
     "nodemon": "^1.8.1"
