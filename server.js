@@ -2,6 +2,7 @@
 // module requires
 const express = require('express');
 const path = require('path');
+const sassMiddleware = require('node-sass-middleware');
 // const bodyParser = require('body-parser');
 // my requires
 const routes = require('./routes/');
@@ -12,7 +13,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(routes);
 
-// 
+//
 // app.use(bodyParser.urlencoded({
 // 	extended: false
 // }));
@@ -20,19 +21,19 @@ app.use(routes);
 // app.use(bodyParser.json());
 
 
-app.get('/', (req, res) => {
-    res.send('yup!');
-})
+// app.get('/', (req, res) => {
+//     res.send('yup!');
+// })
 
-// use static files in public/
-app.use(express.static(path.join(__dirname, 'public')));
 // compile sass
-app.use(require('node-sass-middleware')({
+app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   indentedSyntax: true,
   sourceMap: true
 }));
+// use static files in public/
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`);

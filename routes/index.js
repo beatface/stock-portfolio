@@ -3,8 +3,8 @@
 const express = require('express');
 const router = express.Router();
 
-const getQuotes = require('./get_quotes');
+const defaultPortfolio = require('./default-portfolio');
 
-router.use(getQuotes);
+router.use(defaultPortfolio);
 
 module.exports = router;

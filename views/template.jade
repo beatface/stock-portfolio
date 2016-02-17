@@ -4,11 +4,11 @@ html
 		block title
 			title= title
 			link(rel='stylesheet' href='lib/Materialize/dist/css/materialize.min.css')
+			link(rel='stylesheet' href='stylesheets/style.css')
 		//- link(rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css')
 		//- link(rel='stylesheet' href='/lib/font-awesome/css/font-awesome.css')
 		//- link(href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css')
-		//- link(rel='stylesheet' href='/stylesheets/style.css')
-	body
+	body(ng-app="stock-portfolio")
 		block header 
 			nav.teal.lighten-2
 				.nav-wrapper
@@ -21,6 +21,10 @@ html
 						li 
 							a(href="collapsible.html") Buy/Sell
 		block content
-
+		
+			
 
 		block scripts
+			script(src='lib/angular/angular.min.js')
+			script(src='lib/angular-ui-router/release/angular-ui-router.min.js')
+			script(src='www/app.js')

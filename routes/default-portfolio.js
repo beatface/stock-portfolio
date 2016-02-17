@@ -2,8 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-const ctrl = require('../controllers/get_quotes');
+const ctrl = require('../controllers/defaultControl');
 
-router.get('/quotes', ctrl.index);
+router.get('/', ctrl.index);
 
 module.exports = router;

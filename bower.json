@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "Materialize": "materialize#^0.97.5"
+    "Materialize": "materialize#^0.97.5",
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18"
   }
 }
