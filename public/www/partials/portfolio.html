@@ -1,5 +1,19 @@
 
-<div class="row">
-  <h1>IN ANGULAR YASSSSS!</h1>
-  <p>yessss!!!! yeesysyysfdysysysy</p>
+<div class="row center">
+  <table class="striped">
+    <thead>
+      <tr>
+        <th data-field="id">Name</th>
+        <th data-field="name">Item Name</th>
+        <th data-field="price">Item Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="stock in stocks">
+        <td>{{stock}}</td>
+        <td>{{stock}}</td>
+        <td>{{stock}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

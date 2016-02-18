@@ -11,7 +11,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('getQuotes', {
             url: "/quotes",
-            templateUrl: "www/partials/getQuotes.html"
+            templateUrl: "www/partials/get-quotes.html"
             // controller: "getQuotesCtrl"
         })
         .state('buyOrSell', {

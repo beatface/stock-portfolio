@@ -4,6 +4,6 @@
 	"sources": [
 		"style.sass"
 	],
-	"mappings": "AAAA,aAAa,CAAC;EACV,SAAS,EAAE,GAAI;EACf,MAAM,EAAE,MAAO,GAAG",
+	"mappings": "AAAA,aAAa,CAAC;EACV,SAAS,EAAE,GAAI;EACf,MAAM,EAAE,MAAO,GAAG;;AAEtB,OAAO,CAAC;EACJ,KAAK,EAAE,GAAI;EACX,MAAM,EAAE,MAAO,GAAG",
 	"names": []
 }

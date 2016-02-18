@@ -1,0 +1,37 @@
+
+<div ng-controller="getQuotesCtrl">
+  <div class="row center">
+    <div class="input-field col s4">
+      <input placeholder="Symbol" id="symbol" type="text" ng-model="symbol" class="validate"/>
+    </div>
+    <div class="input-field col s2">
+      <button ng-click="getStock(symbol)" class="validate btn">Get quote</button>
+    </div>
+  </div>
+  <div class="row center">
+    <div ng-show="noQuote">
+      <p>{{noQuoteMessage}}</p>
+    </div>
+    <div id="outputQuotes" ng-show="quoteExists">
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Stock</th>
+            <th>Symbol</th>
+            <th>Last Price</th>
+            <th>Traded at</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>{{quoteData.data.Name}}</td>
+          <td>{{quoteData.data.Symbol}}</td>
+          <td>${{quoteData.data.LastPrice}}</td>
+          <td>{{quoteData.data.Timestamp}}</td>
+          <td> 
+            <button ng-click="buyStock()" class="btn">Buy</button>
+          </td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

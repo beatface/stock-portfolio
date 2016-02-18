@@ -12,14 +12,14 @@ html
 		block header 
 			nav.teal.lighten-2
 				.nav-wrapper
-					a(href="#" class="brand-logo") Logo
+					a(href="#" class="brand-logo") Stockin' Up
 					ul#nav-mobile.right.hide-on-med-and-down
 						li 
-							a(href="sass.html") Portfolio
+							a(ui-sref="portfolio") Portfolio
 						li 
-							a(href="badges.html") View Quotes
-						li 
-							a(href="collapsible.html") Buy/Sell
+							a(ui-sref='getQuotes') Quotes
+						//- li 
+						//- 	a(ui-sref="") Buy/Sell
 		block content
 		
 			
@@ -28,3 +28,5 @@ html
 			script(src='lib/angular/angular.min.js')
 			script(src='lib/angular-ui-router/release/angular-ui-router.min.js')
 			script(src='www/app.js')
+			//- Controllers
+			script(src='www/controllers/getQuotesCtrl.js')
