@@ -7,17 +7,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('portfolio', {
             url: "/",
             templateUrl: "www/partials/portfolio.html"
-            // controller: "portfolioCtrl"
         })
         .state('getQuotes', {
             url: "/quotes",
             templateUrl: "www/partials/get-quotes.html"
-            // controller: "getQuotesCtrl"
         })
         .state('buyOrSell', {
             url: "/buy-sell",
             templateUrl: "www/partials/buy-sell.html"
-            // controller: "buyOrSellCtrl"
         });
     $urlRouterProvider.otherwise("/");
 });

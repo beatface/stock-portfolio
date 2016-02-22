@@ -3,11 +3,11 @@
 const request = require('request');
 const mongoose = require('mongoose');
 
-const model = mongoose.model('myStocks', mongoose.Schema({
+module.exports.model = mongoose.model('Stocks', mongoose.Schema({
     name: String,
     symbol: String,
     lastPrice: Number,
-    change: Number
+    timestamp: String
 }));
 
 module.exports.APIrequest = (req, res) => {
@@ -18,4 +18,4 @@ module.exports.APIrequest = (req, res) => {
         let parsedData = JSON.parse(body);
         res.send(parsedData);
     });
-}
+};

@@ -1,9 +1,11 @@
-app.controller('getQuotesCtrl', ['$scope', '$http', ($scope, $http) => {
-    console.log("GOT HERE");
+"use strict";
+
+app.controller('getQuotesCtrl', ['$scope', '$http', '$state', ($scope, $http, $state) => {
 
     $scope.quoteExists = false;
     $scope.noQuote = false;
     $scope.noQuoteMessage = "";
+    $scope.quoteData = "";
 
     $scope.getStock = (symbol) => {
         $scope.quoteExists = false; // resets ng-shows to hide
@@ -19,6 +21,11 @@ app.controller('getQuotesCtrl', ['$scope', '$http', ($scope, $http) => {
 
     $scope.buyStock = () => {
         console.log('trying to buy');
+        $http.post(`/quotes/${$scope.quoteData.data.Symbol}/${$scope.quoteData.data.Name}/${$scope.quoteData.data.LastPrice}/${$scope.quoteData.data.Timestamp}`)
+        .then(function(res) {
+            console.log(res);
+            $state.go('portfolio');
+        });
     };
 
 }]);
