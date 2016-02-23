@@ -13,8 +13,7 @@ const routes = require('./routes/');
 // Connection URL
 if (process.env.NODE_ENV === "production") {
 	console.log("yes, it's production");
-	var mongo_url = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PW}@${process.env.MONGODB_URL}:${process.env.MONGODB_PORT}/node-webserver-emma`;
-	console.log(mongo_url);
+	var mongo_url = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PW}@${process.env.MONGODB_URL}:${process.env.MONGODB_PORT}/stockin-up`;
 } else {
 	var mongo_url = 'mongodb://localhost:27017/';
 }
