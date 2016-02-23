@@ -10,7 +10,9 @@ app.controller('portfolioCtrl', ['$scope', '$http', '$state', ($scope, $http, $s
         $scope.stocks = data.data;
     });
 
-    $scope.sellStock = () => {
+    $scope.sellStock = (stockId) => {
+        console.log(stockId);
+
         $state.go('portfolio');
     };
 
