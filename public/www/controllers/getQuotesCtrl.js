@@ -19,9 +19,10 @@ app.controller('getQuotesCtrl', ['$scope', '$http', '$state', ($scope, $http, $s
         });
     };
 
-    $scope.buyStock = () => {
+    $scope.buyStock = (quantity) => {
         console.log('trying to buy');
-        $http.post(`/quotes/${$scope.quoteData.data.Symbol}/${$scope.quoteData.data.Name}/${$scope.quoteData.data.LastPrice}/${$scope.quoteData.data.Timestamp}`)
+        const totalValue = ($scope.quoteData.data.LastPrice * quantity).toFixed(2);
+        $http.post(`/quotes/${quantity}/${$scope.quoteData.data.Symbol}/${$scope.quoteData.data.Name}/${$scope.quoteData.data.LastPrice}/${totalValue}`)
         .then(function(res) {
             console.log(res);
             $state.go('portfolio');

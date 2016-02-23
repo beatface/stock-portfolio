@@ -18,10 +18,10 @@
     },
     "extends": "eslint:recommended",
     "globals": {
-        "res": true,
-        "$http": false,
-        "$scope": true,
-        "app": true
+      "res": true,
+      "$http": false,
+      "$scope": true,
+      "app": true
     },
     "rules": {
       "no-console": 0

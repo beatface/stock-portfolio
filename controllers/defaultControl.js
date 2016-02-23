@@ -1,7 +1,11 @@
 "use strict";
 
-// const GetQuotes = require('../models/defaultModel');
+const APImodel = require('../models/APIModel');
+const Stocks = APImodel.model;
 
-module.exports.index = (req, res) => {
-    res.render('index');
+module.exports.showStocks = (req, res) => {
+    Stocks.find({}, (err, stocks) => {
+        if (err) throw err;
+        res.send(stocks);
+    });
 };

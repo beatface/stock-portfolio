@@ -1,3 +1,4 @@
+"use strict";
 /* eslint-disable */
 var app = angular.module("stock-portfolio", ["ui.router"]);
 

@@ -7,7 +7,8 @@ module.exports.model = mongoose.model('Stocks', mongoose.Schema({
     name: String,
     symbol: String,
     lastPrice: Number,
-    timestamp: String
+    quantity: Number,
+    totalValue: Number
 }));
 
 module.exports.APIrequest = (req, res) => {
