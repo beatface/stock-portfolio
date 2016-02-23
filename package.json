@@ -44,10 +44,10 @@
     "gulp": "^3.9.1",
     "jade": "^1.11.0",
     "mongoose": "^4.4.3",
+    "bower": "^1.7.7",
     "node-sass-middleware": "^0.9.7"
   },
   "devDependencies": {
-    "bower": "^1.7.7",
     "gulp": "^3.8.10",
     "gulp-jade": "^1.1.0",
     "gulp-livereload": "^3.0.2",
