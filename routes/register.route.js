@@ -2,8 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-const ctrl = require('../controllers/defaultControl');
 
-router.get('/portfolio', ctrl.showStocks);
+const ctrl = require('../controllers/register.control');
+
+router.post('/register', ctrl.register);
 
 module.exports = router;

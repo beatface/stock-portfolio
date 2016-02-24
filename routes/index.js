@@ -3,12 +3,17 @@
 const express = require('express');
 const router = express.Router();
 
-const defaultPortfolio = require('./getPortfolio');
-const APIData = require('./getAPIStock');
+const portfolio = require('./portfolio.route');
+const APIData = require('./quotesAPI.route');
+const login = require('./login.route');
+const register = require('./register.route');
 
-router.use(defaultPortfolio);
+router.use(portfolio);
 router.use(APIData);
+router.use(login);
+router.use(register);
 
+// default to load angular partials
 router.get('/', (req, res) => {
     res.render('index');
 });

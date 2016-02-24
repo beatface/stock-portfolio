@@ -1,0 +1,17 @@
+<div class='row center' ng-controller='loginCtrl'>
+    <form action='/login' method='POST'>
+        <div class='input-group'>
+            <input type='email' name='email' placeholder='Email'>
+        </div>
+        <div class='input-group'>
+            <input type='password' name='password' placeholder='Password'>
+        </div>
+        <div class='input-group'>
+            <input type='submit' value='Login'>
+        </div>
+    </form>
+    <div class='input-group'>
+        <p>Don't have an account? Register!</p>
+        <button ng-click="register()">Register</button>
+    </div>
+</div>

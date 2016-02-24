@@ -3,13 +3,19 @@
 const request = require('request');
 const mongoose = require('mongoose');
 
-module.exports.model = mongoose.model('Stocks', mongoose.Schema({
+const Stocks = mongoose.model('Stocks', mongoose.Schema({
     name: String,
     symbol: String,
     lastPrice: Number,
     quantity: Number,
-    totalValue: Number
+    totalValue: Number,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    }
 }));
+
+module.exports.model = Stocks;
 
 module.exports.APIrequest = (req, res) => {
     console.log("got to the API Model");
@@ -19,4 +25,15 @@ module.exports.APIrequest = (req, res) => {
         let parsedData = JSON.parse(body);
         res.send(parsedData);
     });
+};
+
+module.exports.create = (req, res) => {
+    Stocks.create(req.params, (err) => {
+        if (err) throw err;
+        res.send('Success! Stock saved.');
+    });
+};
+
+module.exports.getStocks = (req, res) => {
+    res.send(req.user.stocks);
 };

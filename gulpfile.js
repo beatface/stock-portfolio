@@ -1,3 +1,4 @@
+"use strict";
 
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
@@ -24,8 +25,8 @@ gulp.task('jade', function () {
       jade: jade,
       pretty: true
     }))
-    .pipe(gulp.dest('./public/www/partials/'))
-})
+    .pipe(gulp.dest('./public/www/partials/'));
+});
 
 gulp.task('nodemon', function () {
   nodemon({
