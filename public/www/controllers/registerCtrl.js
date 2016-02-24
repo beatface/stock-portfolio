@@ -2,7 +2,7 @@
 
 app.controller('registerCtrl', ['$scope', '$http', '$state', ($scope, $http, $state) => {
 
-    console.log('got to login ctrl');
+    console.log('got to register ctrl');
 
     $scope.register = () => {
         $http.post('/register')

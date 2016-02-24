@@ -11,7 +11,7 @@ const UserSchema = mongoose.Schema({
 });
 
 // Method on the schema to authenticate a user through bcrypt
-UserSchema.methods.confirmAuth = (password, callback) => {
+UserSchema.methods.confirmAuth = function (password, callback) {
     bcrypt.compare(password, this.password, callback);
 };
 

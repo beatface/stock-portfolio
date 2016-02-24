@@ -3,7 +3,7 @@
 const request = require('request');
 const mongoose = require('mongoose');
 
-const Stocks = mongoose.model('Stocks', mongoose.Schema({
+const Stocks = mongoose.model('stocks', mongoose.Schema({
     name: String,
     symbol: String,
     lastPrice: Number,

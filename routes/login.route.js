@@ -11,7 +11,7 @@ router.delete('/logout', (req, res) => {
     req.session.regenerate(function(err) {
         if (err) throw err;
         // cannot access session here
-        res.redirect('/login');
+        res.redirect('/#/login');
     });
 });
 

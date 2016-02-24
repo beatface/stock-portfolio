@@ -24,18 +24,20 @@ passport.use(new LocalStrategy ({
             if (err) throw err;
             // if the user exists
             if (user) {
+                console.log(">>", user.password);
                 // use schema method to confirm if hashes match
                 user.confirmAuth(password, (err, valid) => {
+                    console.log(`valid from user.config:::: ${valid}`);
                     if (err) throw err;
                     if (valid) {
-                        return done(null, user, { message: SUCCESSFUL_LOGIN_MSG });
+                        done(null, user, { message: SUCCESSFUL_LOGIN_MSG });
                     } else {
-                        return done(null, null, { message: INCORRECT_PASSWORD_MSG });
+                        done(null, null, { message: INCORRECT_PASSWORD_MSG });
                     }
                 });
             // else, send error message to the user
             } else {
-                return done(null, null, { message: INCORRECT_USERNAME_MSG });
+                done(null, null, { message: INCORRECT_USERNAME_MSG });
             }
         });
     })

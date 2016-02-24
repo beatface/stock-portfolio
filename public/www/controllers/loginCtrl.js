@@ -12,6 +12,7 @@ app.controller('loginCtrl', ['$scope', '$http', '$state', ($scope, $http, $state
         $http.post('/login')
         .then(function(res) {
             console.log(res);
+            $state.go('portfolio');
         });
 
     };
