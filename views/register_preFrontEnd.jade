@@ -1,0 +1,15 @@
+extends template.jade
+block content
+
+    .row.center
+        h4 Register for Stockin' Up
+        form(action='/register' method='POST')
+            .input-group
+                input(type='email' name='email' placeholder='Email')
+            .input-group
+                input(type='password' name='password' placeholder='Password')
+            .input-group
+                input(type='password' name='passwordVerify' placeholder='Confirm password')
+
+            .input-group
+                input(type='submit' value='Register')

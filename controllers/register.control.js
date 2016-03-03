@@ -13,18 +13,18 @@ module.exports.register = (req, res) => {
             if (user) {
                 req.session.user = user;
                 // redirect to login page
-                res.redirect('/#/login');
+                res.redirect('/login');
             // if user doesn't exist
             } else {
                 // register, then redirect
                 User.create(req.body, (err) => {
                     if (err) throw err;
-                    res.redirect('/#/login');
+                    res.redirect('/login');
                 });
             }
         });
     } else {
         // rerender register page and notify user that passwords don't match
-        res.redirect(`/#/register`);
+        res.redirect(`/register`);
     }
 };

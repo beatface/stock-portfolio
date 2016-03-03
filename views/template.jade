@@ -5,31 +5,14 @@ html(lang='en')
 			title= title
 			link(rel='stylesheet' href='lib/Materialize/dist/css/materialize.min.css')
 			link(rel='stylesheet' href='stylesheets/style.css')
-		//- link(rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css')
-		//- link(rel='stylesheet' href='/lib/font-awesome/css/font-awesome.css')
-		//- link(href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css')
 	body(ng-app="stock-portfolio")
 		block header 
 			nav.teal.lighten-2
 				.nav-wrapper
 					a(href="#" class="brand-logo") Stockin' Up
-					ul#nav-mobile.right.hide-on-med-and-down
-						li 
-							a(ui-sref="portfolio") Portfolio
-						li 
-							a(ui-sref='getQuotes') Quotes
-						//- li 
-						//- 	a(ui-sref="") Buy/Sell
+	
 		block content
 		
 			
 
 		block scripts
-			script(src='lib/angular/angular.min.js')
-			script(src='lib/angular-ui-router/release/angular-ui-router.min.js')
-			script(src='www/app.js')
-			//- Controllers
-			script(src='www/controllers/getQuotesCtrl.js')
-			script(src='www/controllers/portfolioCtrl.js')
-			script(src='www/controllers/loginCtrl.js')
-			script(src='www/controllers/registerCtrl.js')

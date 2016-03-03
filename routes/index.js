@@ -13,9 +13,22 @@ router.use(APIData);
 router.use(login);
 router.use(register);
 
+
 // default to load angular partials
 router.get('/', (req, res) => {
-    res.render('index');
+    if (req.user) {
+        res.render('index');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('*', function(req, res) {
+    if (req.user) {
+        res.redirect('/#/');
+    } else {
+        res.redirect('/login');
+    }
 });
 
 module.exports = router;

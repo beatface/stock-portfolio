@@ -1,0 +1,16 @@
+extends template.jade
+block content
+
+    .row.center
+        form(action='/login' method='POST')
+            .input-group
+                input(type='email' name='email' placeholder='Email')
+            .input-group
+                input(type='password' name='password' placeholder='Password')
+
+            .input-group
+                input(type='submit' value='Login')
+
+        .input-group
+            p Don't have an account? Register!
+            button: a(href='register') Register

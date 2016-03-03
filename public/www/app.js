@@ -5,14 +5,6 @@ var app = angular.module("stock-portfolio", ["ui.router"]);
 app.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-        .state('login', {
-            url: "/login",
-            templateUrl:"www/partials/login.html"
-        })
-        .state('register', {
-            url: "/register",
-            templateUrl: "www/partials/register.html"
-        })
         .state('portfolio', {
             url: "/",
             templateUrl: "www/partials/portfolio.html"

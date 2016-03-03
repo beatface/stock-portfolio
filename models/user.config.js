@@ -24,10 +24,8 @@ passport.use(new LocalStrategy ({
             if (err) throw err;
             // if the user exists
             if (user) {
-                console.log(">>", user.password);
                 // use schema method to confirm if hashes match
                 user.confirmAuth(password, (err, valid) => {
-                    console.log(`valid from user.config:::: ${valid}`);
                     if (err) throw err;
                     if (valid) {
                         done(null, user, { message: SUCCESSFUL_LOGIN_MSG });

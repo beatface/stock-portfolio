@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const RedisStore = require('connect-redis')(session);
+const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 // my requires
 const routes = require('./routes/');
@@ -27,6 +28,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(methodOverride('_method'));
 // compile sass
 app.use(sassMiddleware({
 	src: path.join(__dirname, 'public'),
@@ -52,6 +54,7 @@ app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
