@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(methodOverride('_method'));
@@ -51,8 +51,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next) => {
-  res.locals.user = req.user;
-  next();
+	if (req.session) {
+		console.log("yes, req.session:", req.session);
+		if (req.session.passport) {
+			console.log(`yes, req.session.passport`);
+			req.user = req.session.passport.user;
+		}
+	} else {
+		console.log(`There is no passport!`);
+	}
+	next();
 });
 
 
@@ -64,6 +72,12 @@ const database = mongoose.connection;
 database.on('open', (err) => {
     if (err) throw err;
     app.listen(PORT, () => {
+		console.log("                    _                                     _",`\n`,
+		" _   _  ___  _   _( ) __ ___    __ _ _ __ ___   __ _ ___(_)_ __   __ _",`\n`,
+		"| | | |/ _ \\| | | |/ '__/ _ \\  / _` | '_ ` _ \\ / _` |_  / | '_ \\ / _` |",`\n`,
+		"| |_| | (_) | |_| || | |  __/ | (_| | | | | | | (_| |/ /| | | | | (_| |",`\n`,
+		" \\__, |\\___/ \\__,_||_|  \\___|  \\__,_|_| |_| |_|\\__,_/___|_|_| |_|\\__, |",`\n`,
+		" |___/                                                           |___/ ");
         console.log(`Listening on port: ${PORT}`);
     });
 });

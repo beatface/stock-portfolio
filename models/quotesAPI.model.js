@@ -18,7 +18,6 @@ const Stocks = mongoose.model('stocks', mongoose.Schema({
 module.exports.model = Stocks;
 
 module.exports.APIrequest = (req, res) => {
-    console.log("got to the API Model");
     let url = `http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol=${req.params.symbol}`;
     request.get(url, (err, response, body) => {
         if (err) throw err;
@@ -28,6 +27,8 @@ module.exports.APIrequest = (req, res) => {
 };
 
 module.exports.create = (req, res) => {
+    // assign user id to params to save to object in database
+    req.params.user = req.session.passport.user;
     Stocks.create(req.params, (err) => {
         if (err) throw err;
         res.send('Success! Stock saved.');
